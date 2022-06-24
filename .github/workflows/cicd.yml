@@ -77,6 +77,8 @@ jobs:
       - name: Setup MSBuild
         if: steps.cache.outputs.cache-hit != 'true'
         uses: microsoft/setup-msbuild@v1.0.0
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
